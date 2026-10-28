@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6f7f5" />
+  <title>Northstar — Plan with purpose</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles.css" />
+  <link rel="stylesheet" href="/src/theme.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard"><span class="brand-mark">✳</span><span>northstar<small>YOUR PERSONAL OS</small></span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav id="navigation" aria-label="Main navigation"></nav>
+      <div class="sidebar-bottom"><div class="focus-card"><span class="focus-icon">✦</span><strong>Small steps, steady progress.</strong><p>Your growth is built one intentional day at a time.</p></div><button class="nav-link" data-page="Settings"><span>⚙</span>Settings</button><div class="profile"><div class="avatar">N</div><span><b>My workspace</b><small>Personal account</small></span><span class="dots">···</span></div></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><button class="mobile-menu" id="menuToggle" aria-label="Open menu">☰</button><div class="breadcrumb">Workspace <span>/</span> <b id="crumb">Dashboard</b></div><div class="top-actions"><span class="today-pill"><i></i> Your private workspace</span><button class="theme-toggle" id="themeToggle" title="Switch to light theme" aria-label="Switch to light theme">◐</button><div class="avatar small-avatar" aria-label="Personal workspace">N</div></div></header>
+      <div class="page-wrap" id="page"></div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <dialog id="taskDialog"><form id="taskForm" method="dialog"><div class="dialog-head"><div><span class="eyebrow">DAILY PLANNER</span><h2 id="dialogTitle">Add a task</h2></div><button class="close-btn" value="cancel" aria-label="Close">×</button></div><input type="hidden" name="id"><label>Task title<input name="title" required maxlength="100" placeholder="What do you want to make progress on?"></label><div class="form-grid"><label>Category<select name="category"><option>Career</option><option>Learning</option><option>Project</option><option>Fitness</option><option>Reading</option><option>Personal</option><option>Other</option></select></label><label>Priority<select name="priority"><option>Medium</option><option>High</option><option>Low</option></select></label><label>Planned date<input name="date" type="date" required></label><label>Start time<input name="time" type="time"></label><label>Estimated minutes<input name="duration" type="number" min="0" max="1440" placeholder="e.g. 45"></label><label>Actual minutes<input name="actual" type="number" min="0" max="1440"></label></div><label>Notes<textarea name="notes" rows="3" placeholder="Optional details"></textarea></label><div class="dialog-actions"><button type="button" class="button secondary" id="cancelDialog">Cancel</button><button class="button primary" value="save">Save task</button></div></form></dialog>
+  <dialog id="habitDialog"><form id="habitForm" method="dialog"><div class="dialog-head"><div><span class="eyebrow">HABITS</span><h2>Create a habit</h2></div><button class="close-btn" value="cancel">×</button></div><label>Habit name<input name="name" required maxlength="60" placeholder="e.g. Read for 20 minutes"></label><label>Category<select name="category"><option>Learning</option><option>Fitness</option><option>Reading</option><option>Personal</option><option>Career</option></select></label><div class="dialog-actions"><button type="button" class="button secondary" id="cancelHabit">Cancel</button><button class="button primary" value="save">Create habit</button></div></form></dialog>
+  <dialog id="entityDialog"><form id="entityForm" method="dialog"><div class="dialog-head"><div><span class="eyebrow" id="entityEyebrow">NORTHSTAR</span><h2 id="entityTitle">Add record</h2></div><button class="close-btn" value="cancel" aria-label="Close">×</button></div><div id="entityFields"></div><div class="dialog-actions"><button type="button" class="button secondary" id="cancelEntity">Cancel</button><button class="button primary" value="save">Save</button></div></form></dialog>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+export const courseProgress=(courseId,modules,topics)=>{const moduleIds=new Set(modules.filter(m=>m.courseId===courseId).map(m=>m.id));const all=topics.filter(t=>moduleIds.has(t.moduleId));return all.length?Math.round(all.filter(t=>t.status==='Completed').length/all.length*100):0};
+export const moduleProgress=(moduleId,topics)=>{const all=topics.filter(t=>t.moduleId===moduleId);return all.length?Math.round(all.filter(t=>t.status==='Completed').length/all.length*100):0};
+export const learningMinutesBetween=(sessions,start,end)=>sessions.filter(s=>s.date>=start&&s.date<=end).reduce((sum,s)=>sum+(Number.isFinite(Number(s.duration))?Number(s.duration):0),0);
+export const projectProgress=(projectId,features)=>{const all=features.filter(f=>f.projectId===projectId);return all.length?Math.round(all.filter(f=>f.status==='Completed').length/all.length*100):0};
